@@ -1,6 +1,17 @@
-import { combineReducers } from 'redux';
-import contactReducer from './contactReducer';
+import { combineReducers } from "redux";
+import contactReducer from "./contactReducer";
 
-export default combineReducers({
-    contact: contactReducer
+const initialState = {
+  users: {},
+};
+const defaultReducer = (state = initialState, action) => {
+  switch (action.type) {
+    default:
+      return state;
+  }
+};
+
+export const rootReducer = combineReducers({
+  default: defaultReducer,
+  contacts: contactReducer,
 });
