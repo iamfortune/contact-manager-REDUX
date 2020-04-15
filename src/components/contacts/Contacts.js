@@ -2,10 +2,15 @@ import React, { Component } from 'react';
 import Contact from './Contact';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { getContacts } from '../../actions/contactActions';
 
 class Contacts extends Component {
+ componentDidMount() {
+   this.props.getContacts();
+ }
+
   render() {
-    const { contacts } = this.state;
+    const { contacts } = this.props;
     return (
       <React.Fragment>
         <h1 className="display-4 mb-2">
@@ -19,8 +24,19 @@ class Contacts extends Component {
   }
 }
 
+Contacts.propTypes = {
+  contacts: PropTypes.array.isRequired,
+  getContacts: PropTypes.func.isRequired
+}
+
 const mapStateToProps = (state) => ({
   contacts: state.contact.contacts
-})
+});
 
-export default connect()(Contacts);
+// called the props by creating a component and added all actions there
+
+// const mapDispatchToProps = (dispatch) => ({
+//   getContacts: () => dispatch({type: GET_CONTACTS})
+// })
+
+export default connect(mapStateToProps, mapDispatchToProps)(Contacts);
