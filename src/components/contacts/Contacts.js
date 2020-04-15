@@ -39,4 +39,7 @@ const mapStateToProps = (state) => ({
 //   getContacts: () => dispatch({type: GET_CONTACTS})
 // })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Contacts);
+export default connect(
+  mapStateToProps,
+  {getContacts}
+  )(Contacts);
