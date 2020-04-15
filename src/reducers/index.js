@@ -13,5 +13,5 @@ const defaultReducer = (state = initialState, action) => {
 
 export const rootReducer = combineReducers({
   default: defaultReducer,
-  contacts: contactReducer,
+  contact: contactReducer,
 });
