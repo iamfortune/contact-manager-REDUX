@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import contactReducer from "./contactReducer";
 
 const initialState = {
-  users: {},
+  // users: {},
 };
 const defaultReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -12,6 +12,6 @@ const defaultReducer = (state = initialState, action) => {
 };
 
 export const rootReducer = combineReducers({
-  default: defaultReducer,
+  // default: defaultReducer,
   contact: contactReducer,
 });
