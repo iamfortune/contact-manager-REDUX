@@ -1,4 +1,4 @@
-import { GET_CONTACTS } from '../actions/types';
+import { GET_CONTACTS, DELETE_CONTACT, ADD_CONTACT } from '../actions/types';
 
 const initialState = {
   // contacts: [],
@@ -9,19 +9,19 @@ const initialState = {
     {
       id: 1,
       name: "Sheddy",
-      email: "john@gmail.com",
+      email: "sheddy@gmail.com",
       phone: "555-555-5555",
     },
     {
       id: 2,
       name: "Kofo",
-      email: "karen@gmail.com",
+      email: "kofo@gmail.com",
       phone: "444-444-4444",
     },
     {
       id: 3,
       name: "Executioner",
-      email: "henry@gmail.com",
+      email: "ibrahimolamikan@gmail.com",
       phone: "333-333-333",
     },
   ],
@@ -37,5 +37,16 @@ export default (state = initialState, action) => {
       return {
         ...state,
       };
+      case DELETE_CONTACT:
+        return {
+          ...state,
+          contacts: state.contacts.filter(contact => 
+            contact.id !== action.payload)
+        };
+        case ADD_CONTACT: 
+        return {
+          ...state,
+          contacts: [action.payload, ...state.contacts]
+        };
   }
 };
