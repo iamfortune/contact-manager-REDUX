@@ -1,4 +1,4 @@
-import { GET_CONTACTS } from "./types";
+import { GET_CONTACTS, ADD_CONTACT, DELETE_CONTACT } from "./types";
 
 export const getContacts = () => {
     return {
