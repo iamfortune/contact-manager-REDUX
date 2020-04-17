@@ -6,7 +6,7 @@ import { getContacts } from '../../actions/contactActions';
 
 
 class Contacts extends Component {
- UNSAFE_componentDidMount() {
+ componentDidMount() {
    this.props.getContacts();
  }
 
