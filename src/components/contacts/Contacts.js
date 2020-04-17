@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getContacts } from '../../actions/contactActions';
 
+
 class Contacts extends Component {
  componentDidMount() {
    this.props.getContacts();
@@ -22,7 +23,7 @@ class Contacts extends Component {
       </React.Fragment>
     );
   }
-}
+}  
 
 Contacts.propTypes = {
   contacts: PropTypes.array.isRequired,
@@ -33,11 +34,6 @@ const mapStateToProps = (state) => ({
   contacts: state.contact.contacts
 });
 
-// called the props by creating a component and added all actions there
-
-// const mapDispatchToProps = (dispatch) => ({
-//   getContacts: () => dispatch({type: GET_CONTACTS})
-// })
 
 export default connect(
   mapStateToProps,
