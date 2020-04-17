@@ -22,8 +22,8 @@ export const addContact = contact => async dispatch => {
     'https://jsonplaceholder.typicode.com/users',
      contact
      );
-    return {
+    dispatch ({
     type: ADD_CONTACT,
     payload: res.data
-  };
+  });
 };
